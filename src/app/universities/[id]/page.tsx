@@ -138,14 +138,14 @@ export default async function UniversityPage({ params }: Props) {
               {/* Badges */}
               <div className="flex flex-wrap gap-2">
                 {[
-                  { label: '✅ Без экзаменов', bg: '#1D9E75' },
-                  { label: '🎓 Erasmus+', bg: '#3C3489' },
-                  { label: '🎁 Наши услуги бесплатны', bg: '#1D9E75' },
+                  { label: '✅ Без экзаменов', bg: '#C8F135', fg: '#1A1A2E' },
+                  { label: '🎓 Erasmus+', bg: '#1A1A2E', fg: '#FFFFFF' },
+                  { label: '🎁 Наши услуги бесплатны', bg: '#C8F135', fg: '#1A1A2E' },
                 ].map((b) => (
                   <span
                     key={b.label}
-                    className="px-3 py-1 rounded-full text-white text-xs font-semibold"
-                    style={{ backgroundColor: b.bg }}
+                    className="px-3 py-1 rounded-full text-xs font-bold"
+                    style={{ backgroundColor: b.bg, color: b.fg }}
                   >
                     {b.label}
                   </span>
@@ -154,7 +154,7 @@ export default async function UniversityPage({ params }: Props) {
                   <span
                     key={tag}
                     className="px-3 py-1 rounded-full text-white text-xs font-semibold"
-                    style={{ backgroundColor: '#3C3489' }}
+                    style={{ backgroundColor: '#1A1A2E' }}
                   >
                     {tag}
                   </span>
@@ -181,13 +181,13 @@ export default async function UniversityPage({ params }: Props) {
                     <p className="font-semibold text-gray-700 mb-3 flex items-center gap-2">
                       <span
                         className="px-2 py-0.5 rounded-md text-white text-xs"
-                        style={{ backgroundColor: '#3C3489' }}
+                        style={{ backgroundColor: '#1A1A2E' }}
                       >Бакалавр</span>
                     </p>
                     <ul className="flex flex-col gap-2">
                       {DOCS_BACHELOR.map((d) => (
                         <li key={d} className="flex items-start gap-2 text-sm text-gray-600">
-                          <span style={{ color: '#1D9E75' }} className="mt-0.5 flex-shrink-0">✓</span>
+                          <span style={{ color: '#1A1A2E' }} className="mt-0.5 flex-shrink-0 font-bold">✓</span>
                           {d}
                         </li>
                       ))}
@@ -203,13 +203,13 @@ export default async function UniversityPage({ params }: Props) {
                     <p className="font-semibold text-gray-700 mb-3 flex items-center gap-2">
                       <span
                         className="px-2 py-0.5 rounded-md text-white text-xs"
-                        style={{ backgroundColor: '#3C3489' }}
+                        style={{ backgroundColor: '#1A1A2E' }}
                       >Магистратура / Associate</span>
                     </p>
                     <ul className="flex flex-col gap-2">
                       {DOCS_MASTER.map((d) => (
                         <li key={d} className="flex items-start gap-2 text-sm text-gray-600">
-                          <span style={{ color: '#1D9E75' }} className="mt-0.5 flex-shrink-0">✓</span>
+                          <span style={{ color: '#1A1A2E' }} className="mt-0.5 flex-shrink-0 font-bold">✓</span>
                           {d}
                         </li>
                       ))}

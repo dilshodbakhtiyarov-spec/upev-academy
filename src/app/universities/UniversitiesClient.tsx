@@ -91,14 +91,14 @@ export default function UniversitiesClient({ universities, faculties }: Props) {
             placeholder="Поиск по названию..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="lg:col-span-2 px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#1D9E75] transition-colors"
+            className="lg:col-span-2 px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#C8F135] transition-colors"
           />
 
           {/* City */}
           <select
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            className="px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#1D9E75] transition-colors bg-white"
+            className="px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#C8F135] transition-colors bg-white"
           >
             {CITIES.map((c) => (
               <option key={c} value={c}>{c === 'Все' ? 'Все города' : c}</option>
@@ -109,7 +109,7 @@ export default function UniversitiesClient({ universities, faculties }: Props) {
           <select
             value={program}
             onChange={(e) => setProgram(e.target.value)}
-            className="px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#1D9E75] transition-colors bg-white"
+            className="px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#C8F135] transition-colors bg-white"
           >
             {PROGRAMS.map((p) => (
               <option key={p.value} value={p.value}>{p.label}</option>
@@ -120,7 +120,7 @@ export default function UniversitiesClient({ universities, faculties }: Props) {
           <select
             value={price}
             onChange={(e) => setPrice(e.target.value)}
-            className="px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#1D9E75] transition-colors bg-white"
+            className="px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-[#C8F135] transition-colors bg-white"
           >
             {PRICE_RANGES.map((p) => (
               <option key={p.value} value={p.value}>{p.label}</option>
@@ -136,12 +136,12 @@ export default function UniversitiesClient({ universities, faculties }: Props) {
               <button
                 key={l}
                 onClick={() => setLanguage(l)}
-                className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
+                className={`px-3 py-1 rounded-lg text-xs font-bold transition-all ${
                   language === l
-                    ? 'text-white'
+                    ? ''
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
-                style={language === l ? { backgroundColor: '#1D9E75' } : {}}
+                style={language === l ? { backgroundColor: '#C8F135', color: '#1A1A2E' } : {}}
               >
                 {l}
               </button>

@@ -81,7 +81,7 @@ export default function FacultyTable({
               {onSelectFaculty && (
                 <td className="px-4 py-3">
                   {selectedFacultyId === faculty.id ? (
-                    <span className="text-xs font-medium" style={{ color: '#1D9E75' }}>✓ Выбран</span>
+                    <span className="text-xs font-bold px-2 py-0.5 rounded-md" style={{ backgroundColor: '#C8F135', color: '#1A1A2E' }}>✓ Выбран</span>
                   ) : (
                     <span className="text-xs text-gray-400">Выбрать</span>
                   )}

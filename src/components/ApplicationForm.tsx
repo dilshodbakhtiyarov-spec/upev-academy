@@ -112,9 +112,9 @@ export default function ApplicationForm({ universityId, universityName, facultie
       <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 text-center">
         <div
           className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4"
-          style={{ backgroundColor: '#1D9E75' + '20' }}
+          style={{ backgroundColor: '#C8F135' + '20' }}
         >
-          <svg className="w-7 h-7" style={{ color: '#1D9E75' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-7 h-7" style={{ color: '#C8F135' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -139,7 +139,7 @@ export default function ApplicationForm({ universityId, universityName, facultie
                 ? 'border-b-2 text-gray-900'
                 : 'text-gray-400 hover:text-gray-600'
             }`}
-            style={activeTab === tab ? { borderColor: '#1D9E75', color: '#1D9E75' } : {}}
+            style={activeTab === tab ? { borderColor: '#C8F135', color: '#C8F135' } : {}}
           >
             {PROGRAM_LABELS[tab]}
           </button>
@@ -156,7 +156,7 @@ export default function ApplicationForm({ universityId, universityName, facultie
             onChange={handleChange}
             required
             placeholder="Иванов Иван"
-            className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#1D9E75] transition-colors"
+            className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#C8F135] transition-colors"
           />
         </div>
 
@@ -168,7 +168,7 @@ export default function ApplicationForm({ universityId, universityName, facultie
               value={form.father_name}
               onChange={handleChange}
               placeholder="Иванович"
-              className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#1D9E75] transition-colors"
+              className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#C8F135] transition-colors"
             />
           </div>
           <div>
@@ -178,7 +178,7 @@ export default function ApplicationForm({ universityId, universityName, facultie
               value={form.mother_name}
               onChange={handleChange}
               placeholder="Мария"
-              className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#1D9E75] transition-colors"
+              className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#C8F135] transition-colors"
             />
           </div>
         </div>
@@ -190,7 +190,7 @@ export default function ApplicationForm({ universityId, universityName, facultie
             value={form.country}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#1D9E75] transition-colors bg-white"
+            className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#C8F135] transition-colors bg-white"
           >
             <option value="">Выберите страну</option>
             {COUNTRIES.map((c) => (
@@ -207,7 +207,7 @@ export default function ApplicationForm({ universityId, universityName, facultie
             onChange={handleChange}
             required
             placeholder="+7 777 123 45 67"
-            className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#1D9E75] transition-colors"
+            className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#C8F135] transition-colors"
           />
         </div>
 
@@ -218,7 +218,7 @@ export default function ApplicationForm({ universityId, universityName, facultie
             value={form.faculty_id}
             onChange={handleChange}
             required
-            className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#1D9E75] transition-colors bg-white"
+            className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#C8F135] transition-colors bg-white"
           >
             <option value="">Выберите факультет</option>
             {filteredFaculties.map((f) => (
@@ -244,7 +244,7 @@ export default function ApplicationForm({ universityId, universityName, facultie
                   accept=".pdf,.jpg,.jpeg,.png"
                   onChange={(e) => handleFile(doc.key, e.target.files?.[0] ?? null)}
                   className="w-full text-xs text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-medium file:text-white file:cursor-pointer"
-                  style={{ '--file-bg': '#1D9E75' } as React.CSSProperties}
+                  style={{ '--file-bg': '#C8F135' } as React.CSSProperties}
                 />
               </div>
             ))}
@@ -258,8 +258,8 @@ export default function ApplicationForm({ universityId, universityName, facultie
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-3 rounded-xl text-white font-semibold text-sm transition-all hover:opacity-90 disabled:opacity-60"
-          style={{ backgroundColor: '#1D9E75' }}
+          className="w-full py-3 rounded-xl font-bold text-sm transition-all hover:opacity-90 disabled:opacity-60"
+          style={{ backgroundColor: '#C8F135', color: '#1A1A2E' }}
         >
           {loading ? 'Отправляем...' : 'Отправить заявку'}
         </button>
@@ -274,11 +274,11 @@ export default function ApplicationForm({ universityId, universityName, facultie
         </a>
 
         {/* Trust blocks */}
-        <div className="rounded-xl p-3 text-xs text-emerald-800" style={{ backgroundColor: '#1D9E75' + '15' }}>
+        <div className="rounded-xl p-3 text-xs font-medium" style={{ backgroundColor: '#C8F135' + '20', color: '#1A1A2E' }}>
           🎓 <strong>Наши услуги бесплатны для студентов</strong> — агентство получает комиссию от университета
         </div>
 
-        <div className="rounded-xl p-3 text-xs text-emerald-800" style={{ backgroundColor: '#1D9E75' + '15' }}>
+        <div className="rounded-xl p-3 text-xs font-medium" style={{ backgroundColor: '#C8F135' + '20', color: '#1A1A2E' }}>
           📱 <strong>Документы придут нам в WhatsApp</strong> — ответим за 24 часа
         </div>
       </form>

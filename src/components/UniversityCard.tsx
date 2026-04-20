@@ -50,7 +50,7 @@ export default function UniversityCard({ university, faculties = [] }: Props) {
 
       {/* Content */}
       <div className="p-5">
-        <h3 className="font-bold text-gray-900 text-lg leading-tight mb-1 group-hover:text-[#1D9E75] transition-colors">
+        <h3 className="font-bold text-gray-900 text-lg leading-tight mb-1 group-hover:text-[#C8F135] transition-colors">
           {university.name}
         </h3>
 
@@ -81,7 +81,7 @@ export default function UniversityCard({ university, faculties = [] }: Props) {
               <span
                 key={tag}
                 className="text-xs px-2 py-0.5 rounded-full text-white font-medium"
-                style={{ backgroundColor: '#3C3489' }}
+                style={{ backgroundColor: '#1A1A2E' }}
               >
                 {tag}
               </span>
@@ -90,8 +90,8 @@ export default function UniversityCard({ university, faculties = [] }: Props) {
         )}
 
         <div
-          className="w-full text-center py-2 rounded-lg text-sm font-semibold text-white transition-opacity hover:opacity-90"
-          style={{ backgroundColor: '#1D9E75' }}
+          className="w-full text-center py-2 rounded-lg text-sm font-bold transition-opacity hover:opacity-90"
+          style={{ backgroundColor: '#C8F135', color: '#1A1A2E' }}
         >
           Подробнее →
         </div>
