@@ -8,72 +8,72 @@ const NAVY = '#1A1A2E'
 const GOLD = '#C8F135'
 const LIGHT_BG = '#F8F9FC'
 
-// ─── DATA ────────────────────────────────────────────────────────────────────
+// âââ DATA ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 const WHY_TURKEY = [
   {
-    icon: '🎓',
-    title: 'Диплом признаётся в ЕС',
-    desc: 'Выпускники могут работать в Европе',
+    icon: 'ð',
+    title: 'ÐÐ¸Ð¿Ð»Ð¾Ð¼ Ð¿ÑÐ¸Ð·Ð½Ð°ÑÑÑÑ Ð² ÐÐ¡',
+    desc: 'ÐÑÐ¿ÑÑÐºÐ½Ð¸ÐºÐ¸ Ð¼Ð¾Ð³ÑÑ ÑÐ°Ð±Ð¾ÑÐ°ÑÑ Ð² ÐÐ²ÑÐ¾Ð¿Ðµ',
   },
   {
-    icon: '💰',
-    title: 'В 3 раза дешевле Европы',
-    desc: 'Качественное образование по доступной цене',
+    icon: 'ð°',
+    title: 'Ð 3 ÑÐ°Ð·Ð° Ð´ÐµÑÐµÐ²Ð»Ðµ ÐÐ²ÑÐ¾Ð¿Ñ',
+    desc: 'ÐÐ°ÑÐµÑÑÐ²ÐµÐ½Ð½Ð¾Ðµ Ð¾Ð±ÑÐ°Ð·Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¿Ð¾ Ð´Ð¾ÑÑÑÐ¿Ð½Ð¾Ð¹ ÑÐµÐ½Ðµ',
   },
   {
-    icon: '✈️',
-    title: 'Прямые рейсы',
-    desc: 'Из Алматы, Ташкента, Москвы каждый день',
+    icon: 'âï¸',
+    title: 'ÐÑÑÐ¼ÑÐµ ÑÐµÐ¹ÑÑ',
+    desc: 'ÐÐ· ÐÐ»Ð¼Ð°ÑÑ, Ð¢Ð°ÑÐºÐµÐ½ÑÐ°, ÐÐ¾ÑÐºÐ²Ñ ÐºÐ°Ð¶Ð´ÑÐ¹ Ð´ÐµÐ½Ñ',
   },
   {
-    icon: '📋',
-    title: 'Без IELTS и экзаменов',
-    desc: 'Поступление только по аттестату',
+    icon: 'ð',
+    title: 'ÐÐµÐ· IELTS Ð¸ ÑÐºÐ·Ð°Ð¼ÐµÐ½Ð¾Ð²',
+    desc: 'ÐÐ¾ÑÑÑÐ¿Ð»ÐµÐ½Ð¸Ðµ ÑÐ¾Ð»ÑÐºÐ¾ Ð¿Ð¾ Ð°ÑÑÐµÑÑÐ°ÑÑ',
   },
 ]
 
 const STEPS = [
   {
     num: '01',
-    title: 'Выбери университет',
-    desc: 'Из каталога 30+ партнёров с фильтрами по городу и специальности',
+    title: 'ÐÑÐ±ÐµÑÐ¸ ÑÐ½Ð¸Ð²ÐµÑÑÐ¸ÑÐµÑ',
+    desc: 'ÐÐ· ÐºÐ°ÑÐ°Ð»Ð¾Ð³Ð° 30+ Ð¿Ð°ÑÑÐ½ÑÑÐ¾Ð² Ñ ÑÐ¸Ð»ÑÑÑÐ°Ð¼Ð¸ Ð¿Ð¾ Ð³Ð¾ÑÐ¾Ð´Ñ Ð¸ ÑÐ¿ÐµÑÐ¸Ð°Ð»ÑÐ½Ð¾ÑÑÐ¸',
   },
   {
     num: '02',
-    title: 'Загрузи документы',
-    desc: 'Аттестат и паспорт прямо на сайте — займёт 5 минут',
+    title: 'ÐÐ°Ð³ÑÑÐ·Ð¸ Ð´Ð¾ÐºÑÐ¼ÐµÐ½ÑÑ',
+    desc: 'ÐÑÑÐµÑÑÐ°Ñ Ð¸ Ð¿Ð°ÑÐ¿Ð¾ÑÑ Ð¿ÑÑÐ¼Ð¾ Ð½Ð° ÑÐ°Ð¹ÑÐµ â Ð·Ð°Ð¹Ð¼ÑÑ 5 Ð¼Ð¸Ð½ÑÑ',
   },
   {
     num: '03',
-    title: 'Мы подаём заявку',
-    desc: 'Напрямую в университет — без лишних хлопот для тебя',
+    title: 'ÐÑ Ð¿Ð¾Ð´Ð°ÑÐ¼ Ð·Ð°ÑÐ²ÐºÑ',
+    desc: 'ÐÐ°Ð¿ÑÑÐ¼ÑÑ Ð² ÑÐ½Ð¸Ð²ÐµÑÑÐ¸ÑÐµÑ â Ð±ÐµÐ· Ð»Ð¸ÑÐ½Ð¸Ñ ÑÐ»Ð¾Ð¿Ð¾Ñ Ð´Ð»Ñ ÑÐµÐ±Ñ',
   },
   {
     num: '04',
-    title: 'Получи письмо',
-    desc: 'Официальное письмо о зачислении в среднем за 1–3 недели',
+    title: 'ÐÐ¾Ð»ÑÑÐ¸ Ð¿Ð¸ÑÑÐ¼Ð¾',
+    desc: 'ÐÑÐ¸ÑÐ¸Ð°Ð»ÑÐ½Ð¾Ðµ Ð¿Ð¸ÑÑÐ¼Ð¾ Ð¾ Ð·Ð°ÑÐ¸ÑÐ»ÐµÐ½Ð¸Ð¸ Ð² ÑÑÐµÐ´Ð½ÐµÐ¼ Ð·Ð° 1â3 Ð½ÐµÐ´ÐµÐ»Ð¸',
   },
 ]
 
 const CITIES = [
   {
-    name: 'Стамбул',
+    name: 'Ð¡ÑÐ°Ð¼Ð±ÑÐ»',
     universities: 12,
     img: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400',
   },
   {
-    name: 'Анталья',
+    name: 'ÐÐ½ÑÐ°Ð»ÑÑ',
     universities: 5,
     img: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400',
   },
   {
-    name: 'Анкара',
+    name: 'ÐÐ½ÐºÐ°ÑÐ°',
     universities: 8,
     img: 'https://images.unsplash.com/photo-1589561454226-796a8aa89b05?w=400',
   },
   {
-    name: 'Измир',
+    name: 'ÐÐ·Ð¼Ð¸Ñ',
     universities: 4,
     img: 'https://images.unsplash.com/photo-1534430480872-3498386e7856?w=400',
   },
@@ -81,30 +81,30 @@ const CITIES = [
 
 const REVIEWS = [
   {
-    name: 'Азиза М.',
-    city: 'Ташкент',
-    text: 'Поступила в Istanbul Bilgi University за 10 дней. Всё оформили сами, мне осталось только собрать чемодан!',
+    name: 'ÐÐ·Ð¸Ð·Ð° Ð.',
+    city: 'Ð¢Ð°ÑÐºÐµÐ½Ñ',
+    text: 'ÐÐ¾ÑÑÑÐ¿Ð¸Ð»Ð° Ð² Istanbul Bilgi University Ð·Ð° 10 Ð´Ð½ÐµÐ¹. ÐÑÑ Ð¾ÑÐ¾ÑÐ¼Ð¸Ð»Ð¸ ÑÐ°Ð¼Ð¸, Ð¼Ð½Ðµ Ð¾ÑÑÐ°Ð»Ð¾ÑÑ ÑÐ¾Ð»ÑÐºÐ¾ ÑÐ¾Ð±ÑÐ°ÑÑ ÑÐµÐ¼Ð¾Ð´Ð°Ð½!',
   },
   {
-    name: 'Данияр К.',
-    city: 'Алматы',
-    text: 'Думал будет сложно, но UPEV Academy помогли на каждом шагу. Сейчас учусь в Анталье на IT!',
+    name: 'ÐÐ°Ð½Ð¸ÑÑ Ð.',
+    city: 'ÐÐ»Ð¼Ð°ÑÑ',
+    text: 'ÐÑÐ¼Ð°Ð» Ð±ÑÐ´ÐµÑ ÑÐ»Ð¾Ð¶Ð½Ð¾, Ð½Ð¾ UPEV Academy Ð¿Ð¾Ð¼Ð¾Ð³Ð»Ð¸ Ð½Ð° ÐºÐ°Ð¶Ð´Ð¾Ð¼ ÑÐ°Ð³Ñ. Ð¡ÐµÐ¹ÑÐ°Ñ ÑÑÑÑÑ Ð² ÐÐ½ÑÐ°Ð»ÑÐµ Ð½Ð° IT!',
   },
   {
-    name: 'Карина С.',
-    city: 'Москва',
-    text: 'Бесплатная помощь — это реально. Никаких скрытых платежей, всё честно и быстро.',
+    name: 'ÐÐ°ÑÐ¸Ð½Ð° Ð¡.',
+    city: 'ÐÐ¾ÑÐºÐ²Ð°',
+    text: 'ÐÐµÑÐ¿Ð»Ð°ÑÐ½Ð°Ñ Ð¿Ð¾Ð¼Ð¾ÑÑ â ÑÑÐ¾ ÑÐµÐ°Ð»ÑÐ½Ð¾. ÐÐ¸ÐºÐ°ÐºÐ¸Ñ ÑÐºÑÑÑÑÑ Ð¿Ð»Ð°ÑÐµÐ¶ÐµÐ¹, Ð²ÑÑ ÑÐµÑÑÐ½Ð¾ Ð¸ Ð±ÑÑÑÑÐ¾.',
   },
 ]
 
-// ─── PAGE ─────────────────────────────────────────────────────────────────────
+// âââ PAGE âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
 export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-      {/* ── HERO ─────────────────────────────────────────────────────────── */}
+      {/* ââ HERO âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */}
       <section
         className="relative overflow-hidden"
         style={{ backgroundColor: NAVY, minHeight: '600px' }}
@@ -130,24 +130,24 @@ export default function HomePage() {
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
-                Официальный партнёр университетов Турции
+                ÐÑÐ¸ÑÐ¸Ð°Ð»ÑÐ½ÑÐ¹ Ð¿Ð°ÑÑÐ½ÑÑ ÑÐ½Ð¸Ð²ÐµÑÑÐ¸ÑÐµÑÐ¾Ð² Ð¢ÑÑÑÐ¸Ð¸
               </div>
 
               {/* Headline */}
               <h1 className="text-white font-bold leading-tight mb-5"
                 style={{ fontSize: 'clamp(36px, 5vw, 56px)', lineHeight: 1.15 }}
               >
-                Поступи в университет{' '}
-                <span style={{ color: GOLD }}>Турции</span>
-                {' '}без экзаменов
-                <br />и без оплаты
+                ÐÐ¾ÑÑÑÐ¿Ð¸ Ð² ÑÐ½Ð¸Ð²ÐµÑÑÐ¸ÑÐµÑ{' '}
+                <span style={{ color: GOLD }}>Ð¢ÑÑÑÐ¸Ð¸</span>
+                {' '}Ð±ÐµÐ· ÑÐºÐ·Ð°Ð¼ÐµÐ½Ð¾Ð²
+                <br />Ð¸ Ð±ÐµÐ· Ð¾Ð¿Ð»Ð°ÑÑ
               </h1>
 
               {/* Subtitle */}
               <p className="text-lg leading-relaxed mb-8" style={{ color: 'rgba(255,255,255,0.72)' }}>
-                UPEV Academy — официальный партнёр ведущих частных университетов Турции.
-                Помогаем студентам поступить быстро и без лишних хлопот.
-                Наши услуги бесплатны — комиссию платит университет.
+                UPEV Academy â Ð¾ÑÐ¸ÑÐ¸Ð°Ð»ÑÐ½ÑÐ¹ Ð¿Ð°ÑÑÐ½ÑÑ Ð²ÐµÐ´ÑÑÐ¸Ñ ÑÐ°ÑÑÐ½ÑÑ ÑÐ½Ð¸Ð²ÐµÑÑÐ¸ÑÐµÑÐ¾Ð² Ð¢ÑÑÑÐ¸Ð¸.
+                ÐÐ¾Ð¼Ð¾Ð³Ð°ÐµÐ¼ ÑÑÑÐ´ÐµÐ½ÑÐ°Ð¼ Ð¿Ð¾ÑÑÑÐ¿Ð¸ÑÑ Ð±ÑÑÑÑÐ¾ Ð¸ Ð±ÐµÐ· Ð»Ð¸ÑÐ½Ð¸Ñ ÑÐ»Ð¾Ð¿Ð¾Ñ.
+                ÐÐ°ÑÐ¸ ÑÑÐ»ÑÐ³Ð¸ Ð±ÐµÑÐ¿Ð»Ð°ÑÐ½Ñ â ÐºÐ¾Ð¼Ð¸ÑÑÐ¸Ñ Ð¿Ð»Ð°ÑÐ¸Ñ ÑÐ½Ð¸Ð²ÐµÑÑÐ¸ÑÐµÑ.
               </p>
 
               {/* Buttons */}
@@ -157,7 +157,7 @@ export default function HomePage() {
                   className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-base transition-all duration-300 hover:opacity-90 hover:shadow-xl"
                   style={{ backgroundColor: GOLD, color: NAVY }}
                 >
-                  Смотреть университеты
+                  Ð¡Ð¼Ð¾ÑÑÐµÑÑ ÑÐ½Ð¸Ð²ÐµÑÑÐ¸ÑÐµÑÑ
                 </Link>
                 <a
                   href="https://calendly.com/upev-academy"
@@ -166,17 +166,17 @@ export default function HomePage() {
                   className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-base border-2 text-white transition-all duration-300 hover:bg-white/10"
                   style={{ borderColor: 'rgba(255,255,255,0.5)' }}
                 >
-                  Бесплатная консультация
+                  ÐÐµÑÐ¿Ð»Ð°ÑÐ½Ð°Ñ ÐºÐ¾Ð½ÑÑÐ»ÑÑÐ°ÑÐ¸Ñ
                 </a>
               </div>
             </div>
 
-            {/* Right: 40% — stat cards */}
+            {/* Right: 40% â stat cards */}
             <div className="lg:col-span-2 flex flex-col gap-4">
               {[
-                { value: '200+', label: 'студентов поступили' },
-                { value: '30+', label: 'университетов партнёров' },
-                { value: '100%', label: 'результат зачисления' },
+                { value: '200+', label: 'ÑÑÑÐ´ÐµÐ½ÑÐ¾Ð² Ð¿Ð¾ÑÑÑÐ¿Ð¸Ð»Ð¸' },
+                { value: '30+', label: 'ÑÐ½Ð¸Ð²ÐµÑÑÐ¸ÑÐµÑÐ¾Ð² Ð¿Ð°ÑÑÐ½ÑÑÐ¾Ð²' },
+                { value: '100%', label: 'ÑÐµÐ·ÑÐ»ÑÑÐ°Ñ Ð·Ð°ÑÐ¸ÑÐ»ÐµÐ½Ð¸Ñ' },
               ].map((stat) => (
                 <div
                   key={stat.label}
@@ -196,19 +196,19 @@ export default function HomePage() {
               ))}
 
               <p className="text-xs text-center mt-1" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                🔒 Ваши данные защищены и используются только для поступления
+                ð ÐÐ°ÑÐ¸ Ð´Ð°Ð½Ð½ÑÐµ Ð·Ð°ÑÐ¸ÑÐµÐ½Ñ Ð¸ Ð¸ÑÐ¿Ð¾Ð»ÑÐ·ÑÑÑÑÑ ÑÐ¾Ð»ÑÐºÐ¾ Ð´Ð»Ñ Ð¿Ð¾ÑÑÑÐ¿Ð»ÐµÐ½Ð¸Ñ
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── WHY TURKEY ───────────────────────────────────────────────────── */}
+      {/* ââ WHY TURKEY âââââââââââââââââââââââââââââââââââââââââââââââââââââ */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-3" style={{ color: NAVY }}>
-              Почему студенты выбирают Турцию?
+              ÐÐ¾ÑÐµÐ¼Ñ ÑÑÑÐ´ÐµÐ½ÑÑ Ð²ÑÐ±Ð¸ÑÐ°ÑÑ Ð¢ÑÑÑÐ¸Ñ?
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -226,14 +226,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── HOW IT WORKS ─────────────────────────────────────────────────── */}
+      {/* ââ HOW IT WORKS âââââââââââââââââââââââââââââââââââââââââââââââââââ */}
       <section id="how-it-works" className="py-20 px-4" style={{ backgroundColor: LIGHT_BG }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold mb-3" style={{ color: NAVY }}>
-              Как мы помогаем поступить
+              ÐÐ°Ðº Ð¼Ñ Ð¿Ð¾Ð¼Ð¾Ð³Ð°ÐµÐ¼ Ð¿Ð¾ÑÑÑÐ¿Ð¸ÑÑ
             </h2>
-            <p className="text-gray-500 text-lg">Четыре шага от выбора до зачисления</p>
+            <p className="text-gray-500 text-lg">Ð§ÐµÑÑÑÐµ ÑÐ°Ð³Ð° Ð¾Ñ Ð²ÑÐ±Ð¾ÑÐ° Ð´Ð¾ Ð·Ð°ÑÐ¸ÑÐ»ÐµÐ½Ð¸Ñ</p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative">
@@ -258,14 +258,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CITIES ───────────────────────────────────────────────────────── */}
+      {/* ââ CITIES âââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */}
       <section id="cities" className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-3" style={{ color: NAVY }}>
-              Выбери город для учёбы
+              ÐÑÐ±ÐµÑÐ¸ Ð³Ð¾ÑÐ¾Ð´ Ð´Ð»Ñ ÑÑÑÐ±Ñ
             </h2>
-            <p className="text-gray-500 text-lg">4 города с лучшими университетами-партнёрами</p>
+            <p className="text-gray-500 text-lg">4 Ð³Ð¾ÑÐ¾Ð´Ð° Ñ Ð»ÑÑÑÐ¸Ð¼Ð¸ ÑÐ½Ð¸Ð²ÐµÑÑÐ¸ÑÐµÑÐ°Ð¼Ð¸-Ð¿Ð°ÑÑÐ½ÑÑÐ°Ð¼Ð¸</p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -289,14 +289,14 @@ export default function HomePage() {
                 <div className="p-4">
                   <h3 className="font-bold text-lg mb-0.5" style={{ color: NAVY }}>{city.name}</h3>
                   <p className="text-sm text-gray-400 mb-3">
-                    {city.universities} университетов
+                    {city.universities} ÑÐ½Ð¸Ð²ÐµÑÑÐ¸ÑÐµÑÐ¾Ð²
                   </p>
                   <Link
                     href={`/universities?city=${encodeURIComponent(city.name)}`}
                     className="inline-flex items-center gap-1 text-sm font-semibold transition-colors"
                     style={{ color: GOLD }}
                   >
-                    Смотреть
+                    Ð¡Ð¼Ð¾ÑÑÐµÑÑ
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -308,12 +308,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── REVIEWS ──────────────────────────────────────────────────────── */}
+      {/* ââ REVIEWS ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */}
       <section className="py-20 px-4" style={{ backgroundColor: NAVY }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">
-              Что говорят наши студенты
+              Ð§ÑÐ¾ Ð³Ð¾Ð²Ð¾ÑÑÑ Ð½Ð°ÑÐ¸ ÑÑÑÐ´ÐµÐ½ÑÑ
             </h2>
           </div>
 
@@ -355,26 +355,63 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── FAQ ──────────────────────────────────────────────────────────── */}
+      
+      {/* TESTIMONIALS */}
+      <section className="py-16 px-6" style={{ background: '#F8F9FC' }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-black text-gray-900 mb-2">Что говорят студенты</h2>
+            <p className="text-gray-500">Реальные истории поступления через UPEV Academy</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { name: 'Айгерим К.', country: '🇰🇿 Алматы', university: 'Bahçeşehir University', program: 'Психология, Бакалавр', text: 'Поступила за 2 недели! Менеджер помог с документами, объяснил каждый шаг. Теперь учусь в Стамбуле мечты.', avatar: 'А' },
+              { name: 'Жасур Т.', country: '🇺🇿 Ташкент', university: 'Istanbul Medipol', program: 'Медицина, Бакалавр', text: 'Хотел поступить на медицину без экзаменов. UPEV Academy сделали это реальным. Рекомендую всем!', avatar: 'Ж' },
+              { name: 'Дмитрий С.', country: '🇷🇺 Москва', university: 'Atılım University', program: 'MBA, Магистратура', text: 'Искал MBA на английском в Анкаре. Всё оформили быстро, поддержка на каждом этапе. Отличная команда.', avatar: 'Д' },
+            ].map((t) => (
+              <div key={t.name} className="bg-white rounded-2xl p-6 card-hover" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.06)' }}>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm"
+                       style={{ background: 'linear-gradient(135deg, #1A1A2E, #C8F135)' }}>
+                    {t.avatar}
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900 text-sm">{t.name}</div>
+                    <div className="text-xs text-gray-400">{t.country}</div>
+                  </div>
+                  <div className="ml-auto text-yellow-400 text-sm">★★★★★</div>
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed mb-4">"{t.text}"</p>
+                <div className="pt-3 border-t border-gray-50">
+                  <div className="text-xs font-semibold text-gray-700">{t.university}</div>
+                  <div className="text-xs text-gray-400">{t.program}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ââ FAQ ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */}
       <section id="faq" className="py-20 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-3" style={{ color: NAVY }}>
-              Частые вопросы
+              Ð§Ð°ÑÑÑÐµ Ð²Ð¾Ð¿ÑÐ¾ÑÑ
             </h2>
           </div>
           <FaqAccordion />
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────────────────── */}
+      {/* ââ CTA ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */}
       <section className="py-20 px-4" style={{ backgroundColor: GOLD }}>
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4" style={{ color: NAVY }}>
-            Готов начать?
+            ÐÐ¾ÑÐ¾Ð² Ð½Ð°ÑÐ°ÑÑ?
           </h2>
           <p className="text-lg mb-10" style={{ color: NAVY }}>
-            Оставь заявку прямо сейчас — мы свяжемся в течение 24 часов
+            ÐÑÑÐ°Ð²Ñ Ð·Ð°ÑÐ²ÐºÑ Ð¿ÑÑÐ¼Ð¾ ÑÐµÐ¹ÑÐ°Ñ â Ð¼Ñ ÑÐ²ÑÐ¶ÐµÐ¼ÑÑ Ð² ÑÐµÑÐµÐ½Ð¸Ðµ 24 ÑÐ°ÑÐ¾Ð²
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -382,7 +419,7 @@ export default function HomePage() {
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-base text-white transition-all duration-300 hover:opacity-90"
               style={{ backgroundColor: NAVY }}
             >
-              Смотреть университеты
+              Ð¡Ð¼Ð¾ÑÑÐµÑÑ ÑÐ½Ð¸Ð²ÐµÑÑÐ¸ÑÐµÑÑ
             </Link>
             <a
               href="https://wa.me/77001234567"
@@ -394,13 +431,13 @@ export default function HomePage() {
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
               </svg>
-              Написать в WhatsApp
+              ÐÐ°Ð¿Ð¸ÑÐ°ÑÑ Ð² WhatsApp
             </a>
           </div>
         </div>
       </section>
 
-      {/* ── FOOTER ───────────────────────────────────────────────────────── */}
+      {/* ââ FOOTER âââââââââââââââââââââââââââââââââââââââââââââââââââââââââ */}
       <footer className="py-14 px-4" style={{ backgroundColor: NAVY }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
@@ -410,7 +447,7 @@ export default function HomePage() {
                 UPEV <span style={{ color: GOLD }}>Academy</span>
               </p>
               <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.55)' }}>
-                Официальный партнёр частных университетов Турции. Помогаем студентам из СНГ поступить быстро и бесплатно.
+                ÐÑÐ¸ÑÐ¸Ð°Ð»ÑÐ½ÑÐ¹ Ð¿Ð°ÑÑÐ½ÑÑ ÑÐ°ÑÑÐ½ÑÑ ÑÐ½Ð¸Ð²ÐµÑÑÐ¸ÑÐµÑÐ¾Ð² Ð¢ÑÑÑÐ¸Ð¸. ÐÐ¾Ð¼Ð¾Ð³Ð°ÐµÐ¼ ÑÑÑÐ´ÐµÐ½ÑÐ°Ð¼ Ð¸Ð· Ð¡ÐÐ Ð¿Ð¾ÑÑÑÐ¿Ð¸ÑÑ Ð±ÑÑÑÑÐ¾ Ð¸ Ð±ÐµÑÐ¿Ð»Ð°ÑÐ½Ð¾.
               </p>
 
               {/* Social icons */}
@@ -462,16 +499,16 @@ export default function HomePage() {
             {/* Links columns */}
             {[
               {
-                title: 'Университеты',
-                links: ['Стамбул', 'Анталья', 'Анкара', 'Измир'],
+                title: 'Ð£Ð½Ð¸Ð²ÐµÑÑÐ¸ÑÐµÑÑ',
+                links: ['Ð¡ÑÐ°Ð¼Ð±ÑÐ»', 'ÐÐ½ÑÐ°Ð»ÑÑ', 'ÐÐ½ÐºÐ°ÑÐ°', 'ÐÐ·Ð¼Ð¸Ñ'],
               },
               {
-                title: 'Города',
-                links: ['IT и программирование', 'Бизнес и менеджмент', 'Дизайн', 'Медицина'],
+                title: 'ÐÐ¾ÑÐ¾Ð´Ð°',
+                links: ['IT Ð¸ Ð¿ÑÐ¾Ð³ÑÐ°Ð¼Ð¼Ð¸ÑÐ¾Ð²Ð°Ð½Ð¸Ðµ', 'ÐÐ¸Ð·Ð½ÐµÑ Ð¸ Ð¼ÐµÐ½ÐµÐ´Ð¶Ð¼ÐµÐ½Ñ', 'ÐÐ¸Ð·Ð°Ð¹Ð½', 'ÐÐµÐ´Ð¸ÑÐ¸Ð½Ð°'],
               },
               {
-                title: 'Компания',
-                links: ['О нас', 'Блог', 'FAQ', 'Стать партнёром'],
+                title: 'ÐÐ¾Ð¼Ð¿Ð°Ð½Ð¸Ñ',
+                links: ['Ð Ð½Ð°Ñ', 'ÐÐ»Ð¾Ð³', 'FAQ', 'Ð¡ÑÐ°ÑÑ Ð¿Ð°ÑÑÐ½ÑÑÐ¾Ð¼'],
               },
             ].map((col) => (
               <div key={col.title}>
@@ -497,7 +534,7 @@ export default function HomePage() {
             className="border-t pt-6 text-sm text-center"
             style={{ borderColor: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.4)' }}
           >
-            © 2025 UPEV Academy. Все права защищены.
+            Â© 2025 UPEV Academy. ÐÑÐµ Ð¿ÑÐ°Ð²Ð° Ð·Ð°ÑÐ¸ÑÐµÐ½Ñ.
           </div>
         </div>
       </footer>
