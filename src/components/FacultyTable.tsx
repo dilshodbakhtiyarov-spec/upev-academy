@@ -1,96 +1,65 @@
-'use client'
-
 import type { Faculty } from '@/lib/supabase'
 
-type Props = {
-  faculties: Faculty[]
-  selectedProgram?: string
-  onSelectFaculty?: (faculty: Faculty) => void
-  selectedFacultyId?: string
+const PROGRAM_COLORS: Record<string, { bg: string; text: string; label: string }> = {
+  bachelor:  { bg: '#EEF2FF', text: '#4F46E5', label: 'Бакалавр' },
+  master:    { bg: '#F0FDF4', text: '#16A34A', label: 'Магистратура' },
+  doctoral:  { bg: '#FFF7ED', text: '#EA580C', label: 'Докторантура' },
+  associate: { bg: '#F9F5FF', text: '#9333EA', label: 'Associate' },
 }
 
-const PROGRAM_LABELS: Record<string, string> = {
-  bachelor: 'Бакалавр',
-  master: 'Магистратура',
-  associate: 'Associate',
-}
+type Props = { faculties: Faculty[] }
 
-const PROGRAM_COLORS: Record<string, string> = {
-  bachelor: 'bg-blue-50 text-blue-700 border-blue-200',
-  master: 'bg-purple-50 text-purple-700 border-purple-200',
-  associate: 'bg-orange-50 text-orange-700 border-orange-200',
-}
-
-export default function FacultyTable({
-  faculties,
-  selectedProgram,
-  onSelectFaculty,
-  selectedFacultyId,
-}: Props) {
-  const filtered = selectedProgram
-    ? faculties.filter((f) => f.program === selectedProgram)
-    : faculties
-
-  if (filtered.length === 0) {
-    return (
-      <p className="text-gray-400 text-sm py-4">
-        Нет факультетов для выбранной программы.
-      </p>
-    )
-  }
+export default function FacultyTable({ faculties }: Props) {
+  const programs = ['bachelor', 'master', 'doctoral', 'associate']
 
   return (
-    <div className="overflow-x-auto rounded-xl border border-gray-100">
-      <table className="w-full text-sm">
-        <thead>
-          <tr className="bg-gray-50 border-b border-gray-100">
-            <th className="text-left px-4 py-3 font-semibold text-gray-600">Факультет</th>
-            <th className="text-left px-4 py-3 font-semibold text-gray-600">Программа</th>
-            <th className="text-left px-4 py-3 font-semibold text-gray-600">Язык</th>
-            <th className="text-right px-4 py-3 font-semibold text-gray-600">Стоимость/год</th>
-            {onSelectFaculty && (
-              <th className="px-4 py-3"></th>
-            )}
-          </tr>
-        </thead>
-        <tbody>
-          {filtered.map((faculty, idx) => (
-            <tr
-              key={faculty.id}
-              className={`border-b border-gray-50 transition-colors ${
-                onSelectFaculty ? 'cursor-pointer hover:bg-gray-50' : ''
-              } ${selectedFacultyId === faculty.id ? 'bg-green-50' : ''}`}
-              onClick={() => onSelectFaculty?.(faculty)}
-            >
-              <td className="px-4 py-3 font-medium text-gray-800">{faculty.name}</td>
-              <td className="px-4 py-3">
-                <span
-                  className={`inline-block text-xs px-2 py-0.5 rounded-full border font-medium ${
-                    PROGRAM_COLORS[faculty.program] ?? 'bg-gray-50 text-gray-600 border-gray-200'
-                  }`}
-                >
-                  {PROGRAM_LABELS[faculty.program] ?? faculty.program}
-                </span>
-              </td>
-              <td className="px-4 py-3 text-gray-600">{faculty.language ?? '—'}</td>
-              <td className="px-4 py-3 text-right font-semibold text-gray-800">
-                {faculty.price_per_year
-                  ? `$${faculty.price_per_year.toLocaleString()}`
-                  : '—'}
-              </td>
-              {onSelectFaculty && (
-                <td className="px-4 py-3">
-                  {selectedFacultyId === faculty.id ? (
-                    <span className="text-xs font-bold px-2 py-0.5 rounded-md" style={{ backgroundColor: '#C8F135', color: '#1A1A2E' }}>✓ Выбран</span>
-                  ) : (
-                    <span className="text-xs text-gray-400">Выбрать</span>
-                  )}
-                </td>
-              )}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="space-y-6">
+      {programs.map(prog => {
+        const items = faculties.filter(f => f.program === prog)
+        if (!items.length) return null
+        const style = PROGRAM_COLORS[prog] || { bg: '#F3F4F6', text: '#374151', label: prog }
+        return (
+          <div key={prog}>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-xs font-bold px-3 py-1 rounded-full"
+                    style={{ background: style.bg, color: style.text }}>
+                {style.label}
+              </span>
+              <span className="text-xs text-gray-400">{items.length} программ</span>
+            </div>
+            <div className="overflow-x-auto rounded-xl border border-gray-100">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr style={{ background: '#F8F9FC' }}>
+                    <th className="text-left px-4 py-2.5 text-xs font-semibold text-gray-500 uppercase tracking-wide">Факультет</th>
+                    <th className="text-left px-4 py-2.5 text-xs font-semibold text-gray-500 uppercase tracking-wide">Язык</th>
+                    <th className="text-right px-4 py-2.5 text-xs font-semibold text-gray-500 uppercase tracking-wide">Стоимость/год</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-50">
+                  {items.map((f, i) => (
+                    <tr key={i} className="hover:bg-gray-50 transition-colors">
+                      <td className="px-4 py-3 font-medium text-gray-800">{f.name}</td>
+                      <td className="px-4 py-3">
+                        <span className="text-xs font-semibold px-2 py-0.5 rounded"
+                              style={{
+                                background: f.language === 'EN' ? '#EFF6FF' : '#F0FFF4',
+                                color: f.language === 'EN' ? '#2563EB' : '#16A34A'
+                              }}>
+                          {f.language}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-right font-bold" style={{ color: '#1A1A2E' }}>
+                        {f.price_per_year ? `$${f.price_per_year.toLocaleString()}` : '—'}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )
+      })}
     </div>
   )
 }
