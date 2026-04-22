@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import AiChatButton from '@/components/AiChatButton'
 import FaqAccordion from '@/components/FaqAccordion'
+import { supabase } from '@/lib/supabase'
 
 const NAVY = '#1A1A2E'
 const GOLD = '#C8F135'
@@ -75,7 +76,7 @@ const CITIES = [
   {
     name: 'Измир',
     universities: 4,
-    img: 'https://images.unsplash.com/photo-1534430480872-3498386e7856?w=400',
+    img: 'https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=400',
   },
 ]
 
@@ -99,7 +100,15 @@ const REVIEWS = [
 
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
 
-export default function HomePage() {
+export default async function HomePage() {
+  // Real-time city counts from Supabase (auto-syncs when new universities are added)
+  const { data: _unis } = await supabase.from('universities').select('city')
+  const cityCounts = new Map<string, number>()
+  for (const u of _unis || []) {
+    const k = (u as { city: string }).city
+    cityCounts.set(k, (cityCounts.get(k) || 0) + 1)
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -289,7 +298,7 @@ export default function HomePage() {
                 <div className="p-4">
                   <h3 className="font-bold text-lg mb-0.5" style={{ color: NAVY }}>{city.name}</h3>
                   <p className="text-sm text-gray-400 mb-3">
-                    {city.universities} университетов
+                    {(() => { const n = cityCounts.get(city.name) || 0; const w = n % 10 === 1 && n % 100 !== 11 ? 'университет' : (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 'университета' : 'университетов'); return `${n} ${w}`; })()}
                   </p>
                   <Link
                     href={`/universities?city=${encodeURIComponent(city.name)}`}
