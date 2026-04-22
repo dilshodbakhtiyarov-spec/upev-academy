@@ -4,7 +4,7 @@ import UniversitiesClient from './UniversitiesClient'
 
 export const metadata = {
   title: 'Все университеты Турции — UPEV Academy',
-  description: '30+ частных университетов Турции. Фильтры по городу, специальности, языку обучения. Поступление без экзаменов.',
+  description: 'Частные университеты Турции: Стамбул, Анкара, Анталья, Измир. Фильтры по городу, специальности, языку обучения. Поступление без экзаменов.',
 }
 
 export default async function UniversitiesPage() {
