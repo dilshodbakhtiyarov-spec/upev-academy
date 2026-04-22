@@ -14,8 +14,8 @@ export default function FacultyTable({ faculties }: Props) {
 
   return (
     <div className="space-y-6">
-      {programs.map(prog => {
-        const items = faculties.filter(f => f.program === prog)
+      {programs.map((prog: string) => {
+        const items = faculties.filter((f: Faculty) => f.program === prog)
         if (!items.length) return null
         const style = PROGRAM_COLORS[prog] || { bg: '#F3F4F6', text: '#374151', label: prog }
         return (
@@ -37,7 +37,7 @@ export default function FacultyTable({ faculties }: Props) {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-50">
-                  {items.map((f, i) => (
+                  {items.map((f: Faculty, i: number) => (
                     <tr key={i} className="hover:bg-gray-50 transition-colors">
                       <td className="px-4 py-3 font-medium text-gray-800">{f.name}</td>
                       <td className="px-4 py-3">
