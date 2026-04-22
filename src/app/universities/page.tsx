@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase'
+import { supabase } from '@/lib/supabase'
 import Navbar from '@/components/Navbar'
 import UniversitiesClient from './UniversitiesClient'
 
@@ -8,8 +8,6 @@ export const metadata = {
 }
 
 export default async function UniversitiesPage() {
-  const supabase = createClient()
-
   const [{ data: universities }, { data: faculties }] = await Promise.all([
     supabase.from('universities').select('*').order('name'),
     supabase.from('faculties').select('*'),
