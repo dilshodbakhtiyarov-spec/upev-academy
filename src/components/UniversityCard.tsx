@@ -19,8 +19,8 @@ export default function UniversityCard({ university, faculties = [] }: Props) {
     ? Math.min(...faculties.filter((f) => f.price_per_year).map((f) => f.price_per_year!))
     : null
 
-  const programs = [...new Set(faculties.map(f => f.program))].slice(0, 3)
-  const langs = [...new Set(faculties.map(f => f.language))].filter(Boolean)
+  const programs = Array.from(new Set(faculties.map((f) => f.program))).slice(0, 3)
+  const langs = Array.from(new Set(faculties.map((f) => f.language).filter(Boolean)))
   const hasEnglish = langs.includes('EN')
 
   return (
@@ -29,7 +29,6 @@ export default function UniversityCard({ university, faculties = [] }: Props) {
       className="group block bg-white rounded-2xl border border-gray-100 overflow-hidden card-hover"
       style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
     >
-      {/* Cover image */}
       <div className="relative h-52 bg-gray-100 overflow-hidden">
         {university.cover_image ? (
           <Image
@@ -43,18 +42,13 @@ export default function UniversityCard({ university, faculties = [] }: Props) {
             <span className="text-4xl">🎓</span>
           </div>
         )}
-        {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-        
-        {/* City badge */}
         <div className="absolute top-3 left-3">
           <span className="text-xs font-semibold px-2.5 py-1 rounded-full text-white backdrop-blur-sm"
                 style={{ background: 'rgba(0,0,0,0.45)' }}>
             📍 {university.city}
           </span>
         </div>
-
-        {/* English badge */}
         {hasEnglish && (
           <div className="absolute top-3 right-3">
             <span className="text-xs font-bold px-2.5 py-1 rounded-full"
@@ -63,8 +57,6 @@ export default function UniversityCard({ university, faculties = [] }: Props) {
             </span>
           </div>
         )}
-
-        {/* Price badge bottom */}
         {minPrice && (
           <div className="absolute bottom-3 right-3">
             <span className="text-xs font-semibold px-2.5 py-1 rounded-full text-white"
@@ -75,47 +67,32 @@ export default function UniversityCard({ university, faculties = [] }: Props) {
         )}
       </div>
 
-      {/* Content */}
       <div className="p-4">
-        <h3 className="font-bold text-gray-900 text-base leading-snug mb-2 group-hover:text-[#1A1A2E] transition-colors line-clamp-2">
+        <h3 className="font-bold text-gray-900 text-base leading-snug mb-2 line-clamp-2">
           {university.name}
         </h3>
-
-        {/* Tags */}
         {university.tags && university.tags.length > 0 && (
           <div className="flex flex-wrap gap-1.5 mb-3">
-            {university.tags.slice(0, 3).map((tag) => (
-              <span
-                key={tag}
-                className="text-xs px-2 py-0.5 rounded-full font-medium"
-                style={{ background: '#f0fbe0', color: '#5a8a0a' }}
-              >
+            {university.tags.slice(0, 3).map((tag: string) => (
+              <span key={tag} className="text-xs px-2 py-0.5 rounded-full font-medium"
+                    style={{ background: '#f0fbe0', color: '#5a8a0a' }}>
                 {tag}
               </span>
             ))}
           </div>
         )}
-
-        {/* Programs */}
         {programs.length > 0 && (
           <div className="flex flex-wrap gap-1.5 mb-3">
-            {programs.map((prog) => (
+            {programs.map((prog: string) => (
               <span key={prog} className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 font-medium">
                 {PROGRAM_LABELS[prog] || prog}
               </span>
             ))}
           </div>
         )}
-
-        {/* Footer */}
         <div className="flex items-center justify-between pt-3 border-t border-gray-50">
-          <span className="text-xs text-gray-400">
-            {faculties.length} программ
-          </span>
-          <span className="text-xs font-semibold flex items-center gap-1"
-                style={{ color: '#C8F135' }}>
-            Подробнее →
-          </span>
+          <span className="text-xs text-gray-400">{faculties.length} программ</span>
+          <span className="text-xs font-semibold" style={{ color: '#C8F135' }}>Подробнее →</span>
         </div>
       </div>
     </Link>
